@@ -9,14 +9,18 @@
     <!-- Result Map,结果集映射，建立数据库表与实体类的映射 -->
     <resultMap id="BaseResultMap"
                type="com.chencj.bos.domain.Book">
-        <!-- coulumn:字段名（对应数据库），property:属性（对应实体类） -->
-        <!-- id对应主键，也可写result -->
+        <!-- coulumn:字段名（对应数据库），
+        property:属性（对应实体类） -->
+        <!-- id对应主键，也可写result
+        <id column="bookID" property="bookID"/>
+        -->
         <result column="bookID" property="bookID" />
         <result column="bookName" property="bookName" />
         <result column="bookCounts" property="bookCounts" />
         <result column="detail" property="detail" />
     </resultMap>
     <!-- id对应.java的抽象方法-->
+    <!--当前的resultType 不能和resultMap id一样 否则会报错-->
     <select id="selectAll" resultType="com.chencj.bos.domain.Book">
         select * from spring_db.books
     </select>
