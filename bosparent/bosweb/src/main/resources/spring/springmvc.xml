@@ -7,10 +7,14 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+    <!--扫描包com.chencj.bos.controller-->
     <context:component-scan base-package="com.chencj.bos.controller" />
+    <!--打开注解方式注入-->
     <mvc:annotation-driven />
-    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+    <!--s视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--WEB-INF目录文件下不饿能直接通过url访问，使用prefix直接定位到目录中-->
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
